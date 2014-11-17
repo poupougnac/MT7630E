@@ -102,7 +102,7 @@ int rt2x00lib_enable_radio(struct rt2x00_dev *rt2x00dev)
 	if (test_bit(DEVICE_STATE_ENABLED_RADIO, &rt2x00dev->flags))
 		return 0;
 
-	printk("===>%s\n",__FUNCTION__);
+	//printk("===>%s\n",__FUNCTION__);
 	/*
 	 * Initialize all data queues.
 	 */
@@ -1249,7 +1249,7 @@ int rt2x00lib_start(struct rt2x00_dev *rt2x00dev)
 	if (test_bit(DEVICE_STATE_STARTED, &rt2x00dev->flags))
 		return 0;
 
-	printk("===>%s\n",__FUNCTION__);
+	//printk("===>%s\n",__FUNCTION__);
 
 #if 1
 	/*
@@ -1358,7 +1358,7 @@ void rt2x00lib_stop(struct rt2x00_dev *rt2x00dev)
 	 * Perhaps we can add something smarter here,
 	 * but for now just disabling the radio should do.
 	 */
-	printk("===>%s\n",__FUNCTION__); 
+	//printk("===>%s\n",__FUNCTION__); 
 	rt2x00lib_disable_radio(rt2x00dev);
 
 	rt2x00dev->intf_ap_count = 0;
@@ -1372,10 +1372,10 @@ void rt2x00lib_stop(struct rt2x00_dev *rt2x00dev)
 
 
 	rt2x00dev_pci_register_read(rt2x00dev, 0x20, &reg);	
-	printk("0x20 = 0x%x\n",reg);
+	//printk("0x20 = 0x%x\n",reg);
 
 	rt2x00dev_pci_register_read(rt2x00dev, 0x80, &reg);	
-	printk("0x80 = 0x%x\n",reg);
+	//printk("0x80 = 0x%x\n",reg);
 		
 }
 
@@ -1681,7 +1681,7 @@ void MT76x0_WLAN_ChipOnOff(
 	CMB_CTRL_STRUC CmbCtrl;
 
 	rt2x00dev_pci_register_read(rt2x00dev, WLAN_FUN_CTRL, &WlanFunCtrl.word);
-	printk("==>%s(): OnOff:%d pAd->WlanFunCtrl.word = 0x%x, Reg-WlanFunCtrl=0x%x\n",
+	//printk("==>%s(): OnOff:%d pAd->WlanFunCtrl.word = 0x%x, Reg-WlanFunCtrl=0x%x\n",
 				__FUNCTION__, bOn, g_WlanFunCtrl.word,  WlanFunCtrl.word);
 
 	if (bResetWLAN == 1)
@@ -1697,12 +1697,12 @@ void MT76x0_WLAN_ChipOnOff(
 			*/					
 			WlanFunCtrl.field.WLAN_RESET_MT7630 = 1;
 			WlanFunCtrl.field.WLAN_RESET_RF_MT7630 = 1;
-			printk("Reset(1) WlanFunCtrl.word = 0x%x\n", WlanFunCtrl.word);
+			//printk("Reset(1) WlanFunCtrl.word = 0x%x\n", WlanFunCtrl.word);
 			rt2x00dev_pci_register_write(rt2x00dev, WLAN_FUN_CTRL, WlanFunCtrl.word);	
 			udelay(50);
 			WlanFunCtrl.field.WLAN_RESET_MT7630 = 0;
 			WlanFunCtrl.field.WLAN_RESET_RF_MT7630 = 0;
-			printk("Reset(2) WlanFunCtrl.word = 0x%x\n", WlanFunCtrl.word);
+			//printk("Reset(2) WlanFunCtrl.word = 0x%x\n", WlanFunCtrl.word);
 			rt2x00dev_pci_register_write(rt2x00dev, WLAN_FUN_CTRL, WlanFunCtrl.word);
 			udelay(50);
 		}
@@ -1728,7 +1728,7 @@ void MT76x0_WLAN_ChipOnOff(
 		WlanFunCtrl.field.WLAN_CLK_EN_MT7630 = 0;
 	}
 
-	printk("WlanFunCtrl.word = 0x%x\n", WlanFunCtrl.word);
+	//printk("WlanFunCtrl.word = 0x%x\n", WlanFunCtrl.word);
 	rt2x00dev_pci_register_write(rt2x00dev, WLAN_FUN_CTRL, WlanFunCtrl.word);	
 	udelay(50);
 
@@ -1797,7 +1797,7 @@ void MT76x0_WLAN_ChipOnOff(
 
 	g_WlanFunCtrl.word = WlanFunCtrl.word;
 	rt2x00dev_pci_register_read(rt2x00dev, WLAN_FUN_CTRL, &WlanFunCtrl.word);
-	printk("<== %s():  pAd->WlanFunCtrl.word = 0x%x, Reg->WlanFunCtrl=0x%x!\n",
+	//printk("<== %s():  pAd->WlanFunCtrl.word = 0x%x, Reg->WlanFunCtrl=0x%x!\n",
 		__FUNCTION__, g_WlanFunCtrl.word, WlanFunCtrl.word);
 #endif
 }
