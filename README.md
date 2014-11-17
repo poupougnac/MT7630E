@@ -1,6 +1,7 @@
 MT7630E
-(From mdjahidulhamid/MT7630E but without constant output in the syslog)
 =======
+*Drivers from mdjahidulhamid/MT7630E but without constant output in the syslog*
+
 Easy installation package for the official driver at http://www.mediatek.com/en/downloads/mt7630-pcie/
 
 
