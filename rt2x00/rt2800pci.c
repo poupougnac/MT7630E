@@ -995,18 +995,18 @@ static void rt2800pci_write_tx_desc(struct queue_entry *entry,
 
 void MT_2800pci_hex_dump(char *str, unsigned char *pSrcBufVA, u32 SrcBufLen)
 {
-	unsigned char *pt;
-	int x;
-	pt = pSrcBufVA;
-	//printk("%s: %p, len = %d\n", str, pSrcBufVA, SrcBufLen);
-	for (x = 0; x < SrcBufLen; x++) {
-		if (x % 16 == 0)
-			//printk("0x%04x : ", x);
-		//printk("%02x ", ((unsigned char)pt[x]));
-		if (x % 16 == 15)
-			//printk("\n");
-	}
-	//printk("\n");
+	// unsigned char *pt;
+	// int x;
+	// pt = pSrcBufVA;
+	// printk("%s: %p, len = %d\n", str, pSrcBufVA, SrcBufLen);
+	// for (x = 0; x < SrcBufLen; x++) {
+	// 	if (x % 16 == 0)
+	// 		printk("0x%04x : ", x);
+	// 	printk("%02x ", ((unsigned char)pt[x]));
+	// 	if (x % 16 == 15)
+	// 		printk("\n");
+	// }
+	// printk("\n");
 }
 
 

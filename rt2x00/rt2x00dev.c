@@ -1681,8 +1681,8 @@ void MT76x0_WLAN_ChipOnOff(
 	CMB_CTRL_STRUC CmbCtrl;
 
 	rt2x00dev_pci_register_read(rt2x00dev, WLAN_FUN_CTRL, &WlanFunCtrl.word);
-	//printk("==>%s(): OnOff:%d pAd->WlanFunCtrl.word = 0x%x, Reg-WlanFunCtrl=0x%x\n",
-				__FUNCTION__, bOn, g_WlanFunCtrl.word,  WlanFunCtrl.word);
+	// printk("==>%s(): OnOff:%d pAd->WlanFunCtrl.word = 0x%x, Reg-WlanFunCtrl=0x%x\n",
+	// 			__FUNCTION__, bOn, g_WlanFunCtrl.word,  WlanFunCtrl.word);
 
 	if (bResetWLAN == 1)
 	{
@@ -1797,8 +1797,8 @@ void MT76x0_WLAN_ChipOnOff(
 
 	g_WlanFunCtrl.word = WlanFunCtrl.word;
 	rt2x00dev_pci_register_read(rt2x00dev, WLAN_FUN_CTRL, &WlanFunCtrl.word);
-	//printk("<== %s():  pAd->WlanFunCtrl.word = 0x%x, Reg->WlanFunCtrl=0x%x!\n",
-		__FUNCTION__, g_WlanFunCtrl.word, WlanFunCtrl.word);
+	// printk("<== %s():  pAd->WlanFunCtrl.word = 0x%x, Reg->WlanFunCtrl=0x%x!\n",
+	// 	__FUNCTION__, g_WlanFunCtrl.word, WlanFunCtrl.word);
 #endif
 }
 EXPORT_SYMBOL_GPL(MT76x0_WLAN_ChipOnOff);
